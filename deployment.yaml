@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: browserhub
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: browserhub
+
+  template:
+    metadata:
+      labels:
+        app: browserhub
+
+    spec:
+      containers:
+
+      - name: browserhub
+
+        image: browserhub
+
+        imagePullPolicy: Never
+
+        ports:
+
+        - containerPort: 80
